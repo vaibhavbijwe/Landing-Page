@@ -1,15 +1,17 @@
+import { motion } from 'framer-motion';
 import React from 'react'
 import { BsArrowUpCircleFill } from "react-icons/bs";
 
 function LandingPage() {
   return (
-    <div className='w-full h-screen bg-zinc-900 pt-1 '>
+    <div data-scroll-section data-scroll-speed="-.3" className='w-full h-screen bg-zinc-900 pt-1 '>
         <div className="textstructure mt-52 px-20">
             {["we create", "eye Opening" , "protections "].map((item, index)=>{
                 return (
                     <div className="masker">
                         <div className='w-full flex items-center'>
-                            {index === 1 && (<div className='mr-[1vw] w-[8vw] h-[5.7vw] relative top-[0.5vw] bg-red-500 rounded-md'></div>)}
+                            {index === 1 && 
+                            (<motion.div initial={{width:0}} animate={{width: "9vw"}} transition={{ease:'easeInOut' ,duration: 1}} className='mr-[1vw] w-[8vw] h-[5.7vw] relative top-[0.5vw] bg-red-500 rounded-md'></motion.div>)}
                             <h1 className="uppercase text-[6.5vw] leading-none tracking-tighter  font-['Founders Grotesk'] font-semibold ">
                                 {item}
                             </h1>
